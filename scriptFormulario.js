@@ -1,7 +1,9 @@
 const input1 = document.querySelector('#calculo1');
 const input2 = document.querySelector('#calculo2');
-const btn = document.querySelector('button');
+// const btn = document.querySelector('button');
+const btn = document.querySelector('#btnCalcular');
 
+const form  = document.querySelector('#form');
 const pResult = document.querySelector('.result')
 
 
@@ -11,10 +13,13 @@ const pResult = document.querySelector('.result')
 //     return console.log(resultado);;
 // }
 
-function btnOnClick() {
-    // console.log('funcioinaaa');
-    // console.log(input1.value + input2.value);
+
+form.addEventListener('submit', sumarInputValues)
+
+function sumarInputValues(event) {
+    console.log({event});
+    event.preventDefault();
     const sumar = input1.value + input2.value;
-    pResult.innerHTML = sumar
+    pResult.innerHTML = "El resultado es: "+ sumar;
 
 }
